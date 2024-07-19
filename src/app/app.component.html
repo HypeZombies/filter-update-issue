@@ -1,0 +1,19 @@
+<ag-grid-angular
+  style="height: 50vh"
+  class="ag-theme-quartz"
+  [rowModelType]="'serverSide'"
+  [pagination]="true"
+  [columnDefs]="colDefs"
+  [suppressMultiSort]="true"
+  [masterDetail]="true"
+  [suppressContextMenu]="true"
+  [suppressCellFocus]="true"
+  [sideBar]="generalSideBarConfiguration"
+  [autoSizeStrategy]="{
+    type: 'fitGridWidth',
+    }"
+  (gridReady)="onGridReady($event)">
+</ag-grid-angular>
+<ng-container *ngFor="let value of dummyFilterValues">
+  <div>{{ value.id }} - {{ value.name }}</div>
+</ng-container>
